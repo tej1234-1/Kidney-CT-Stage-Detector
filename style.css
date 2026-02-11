@@ -1,0 +1,173 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --accent: #3b82f6;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --success: #22c55e;
+    --danger: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+main {
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+}
+
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.center {
+    text-align: center;
+}
+
+/* ================= DROP ZONE ================= */
+
+#drop-zone {
+    border: 2px dashed var(--accent);
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+#drop-zone.dragover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+button {
+    background: var(--accent);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ================= PROGRESS BAR ================= */
+
+.progress-container {
+    width: 100%;
+    background: #334155;
+    border-radius: 8px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 8px;
+    width: 0%;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrapper {
+    overflow-x: auto;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: var(--accent);
+    position: sticky;
+    top: 0;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* ================= RESULTS ================= */
+
+.results-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.result-card {
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--accent);
+}
+
+.result-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.result-card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ================= SPINNER ================= */
+
+.spinner {
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-left: 10px;
+    animation: spin 1s linear infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 768px){
+    main {
+        padding: 10px;
+    }
+}
