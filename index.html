@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Kidney CT ML Dashboard</h1>
+</header>
+
+<main>
+
+    <!-- ================= FILE UPLOAD SECTION ================= -->
+    <section class="card">
+        <h2>Upload Dataset (CSV)</h2>
+
+        <div id="drop-zone">
+            <p>Drag & Drop CSV File Here</p>
+            <button id="browseBtn">Browse</button>
+            <input type="file" id="fileInput" accept=".csv" hidden>
+        </div>
+
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+    </section>
+
+
+    <!-- ================= DATA PREVIEW SECTION ================= -->
+    <section class="card">
+        <h2>Data Preview</h2>
+
+        <div class="table-wrapper">
+            <table id="previewTable">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- ================= RUN MODEL SECTION ================= -->
+    <section class="card center">
+        <button id="runModelBtn" disabled>
+            Run Model
+            <span class="spinner hidden"></span>
+        </button>
+    </section>
+
+
+    <!-- ================= RESULTS SECTION ================= -->
+    <section class="card">
+        <h2>Model Results</h2>
+        <div id="results" class="results-grid"></div>
+    </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
